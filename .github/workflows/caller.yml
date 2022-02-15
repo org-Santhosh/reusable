@@ -1,12 +1,14 @@
-name: caller
+
+name: samosa_workflow
 on: push
 jobs:
-  job1:
-    runner: ubuntu-latest
+  upload1:
+    name: uploading office files to server
+    runs-on: ubuntu-latest
     steps:
-      -name: step1
-       run: |
-         echo "line1"
-         
+      - shell: bash
+        run: |
+          echo "Samosa is very tasty"
+          echo "samosa is not health"          
   job2:
     uses: org-Santhosh/reusable/.github/workflows/called.yml@main
