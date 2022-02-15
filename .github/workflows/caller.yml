@@ -10,5 +10,5 @@ jobs:
         run: |
           echo "Samosa is very tasty"
           echo "samosa is not health"          
-  job2:
-    uses: org-Santhosh/reusable/.github/workflows/called.yml@main
+  #job2:
+    #uses: org-Santhosh/reusable/.github/workflows/called.yml@main
