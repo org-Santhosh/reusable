@@ -4,7 +4,7 @@ on :
     inputs:
       manifest:
         required: true
-        #type: string
+        type: string
     secrets:
       org:
         required: true
@@ -17,7 +17,7 @@ on :
 
 jobs:
   cd:
-    runs-on: [self-hosted, linux, X64, research]
+    runs-on: ubuntu-latest
     steps:
       - name: Step 7 - Deploy to CF
         uses: jhunt/cf-push@v1
