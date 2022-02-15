@@ -1,0 +1,30 @@
+name: called
+on :
+  workflow_call:
+    inputs:
+      manifest:
+        required: true
+        #type: string
+    secrets:
+      org:
+        required: true
+      space:
+        required: true
+      username:
+        required: true
+      password:
+        required: true
+
+jobs:
+  cd:
+    runs-on: [self-hosted, linux, X64, research]
+    steps:
+      - name: Step 7 - Deploy to CF
+        uses: jhunt/cf-push@v1
+        with:
+          api: https://api.cloud.pcftest.com
+          org:      ${{ secrets.org }}
+          space:    ${{ secrets.space }}
+          username: ${{ secrets.username }}
+          password: ${{ secrets.password }}
+          manifest: ${{ inputs.manifest }}
