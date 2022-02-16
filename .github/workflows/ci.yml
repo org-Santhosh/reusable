@@ -1,0 +1,16 @@
+name: Pipeline
+
+on:
+  push:
+    branches: [ branch_checkoutotherrepo ]
+    
+#starting buildjob
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Step 1 - Checkout main branch from GitHub 
+        uses: actions/checkout@v2
+        with:
+          repository: org-Santhosh/sample-hellowrold-java
