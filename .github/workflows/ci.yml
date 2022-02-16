@@ -16,4 +16,6 @@ jobs:
           repository: org-Santhosh/sample-hellowrold-java
           ref: integration
           
-      - run: ls
+      - run: |
+          ls
+          cat manifest.yml
