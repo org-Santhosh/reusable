@@ -8,4 +8,4 @@ jobs:
     steps:
       - shell: bash
         run: |
-          echo ${{ github.repository }}
+          echo ${{ github.repository }}..substring(3)
