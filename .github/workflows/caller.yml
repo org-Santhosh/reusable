@@ -8,5 +8,5 @@ jobs:
     steps:
       - shell: bash
         run: |
-          repo_name = ${{ github.repository }}- ${{ github.repository.owner }}
+          repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
           echo $repo_name
