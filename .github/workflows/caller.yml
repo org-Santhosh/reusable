@@ -1,9 +1,9 @@
 
-name: samosa_workflow
+name: dockerbuild
 on: push
 jobs:
   upload1:
-    name: uploading office files to server
+    name: bulding docker image
     runs-on: ubuntu-latest
     steps:
       - name: Step 1 - Checkout Repository from GitHub
@@ -12,9 +12,12 @@ jobs:
       - name: checking docker
         run: |
           cat Dockerfile
-          docker build -t sancentos .
+          sudo docker build -t sancentos .
+          sudo docker login -u santhosh39 -p ${{ secrets.DOCKER_PASSWORD }}
+          sudo docker tag sancentos:latest santhosh/sancentos
+          sudo docker push santhosh/sancentos
       
       - name: checking files
         run: |
-          docker images
+          sudo docker images
           ls
