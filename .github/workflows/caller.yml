@@ -14,7 +14,7 @@ jobs:
           cat Dockerfile
           sudo docker build -t sancentos .
           sudo docker login -u santhosh39 -p ${{ secrets.DOCKER_PASSWORD }}
-          sudo docker tag sancentos:latest santhosh/sancentos
+          sudo docker tag sancentos:latest santhosh39/sancentos
           sudo docker images
           
       
