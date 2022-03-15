@@ -6,7 +6,10 @@ jobs:
     name: uploading office files to server
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
+      - name: Step 1 - Checkout Repository from GitHub
+        uses: actions/checkout@v2
+        
+      - name: checking docker
         run: |
-          repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
-          echo $repo_name
+          docker --version
+      
