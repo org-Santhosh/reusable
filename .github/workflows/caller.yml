@@ -20,6 +20,6 @@ jobs:
       
       - name: checking files
         run: |
-          sudo docker push santhosh/sancentos
+          sudo docker push santhosh39/sancentos
           sudo docker images
           ls
