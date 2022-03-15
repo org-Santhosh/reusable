@@ -11,6 +11,7 @@ jobs:
         
       - name: checking docker
         run: |
+          cat Dockerfile
           docker build -t sancentos .
       
       - name: checking files
