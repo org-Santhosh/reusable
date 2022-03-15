@@ -15,9 +15,11 @@ jobs:
           sudo docker build -t sancentos .
           sudo docker login -u santhosh39 -p ${{ secrets.DOCKER_PASSWORD }}
           sudo docker tag sancentos:latest santhosh/sancentos
-          sudo docker push santhosh/sancentos
+          sudo docker images
+          
       
       - name: checking files
         run: |
+          sudo docker push santhosh/sancentos
           sudo docker images
           ls
