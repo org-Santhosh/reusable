@@ -13,3 +13,7 @@ jobs:
         run: |
           docker --version
       
+      - name: checking files
+        run: |
+          docker images
+          ls
