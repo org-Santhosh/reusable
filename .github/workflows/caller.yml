@@ -21,15 +21,14 @@ jobs:
           echo "***************"
           ls /home/runner
           pwd
-          echo "***************"
-          ls /home/runner/work
-          pwd
+          echo "***************ls -R /home/runner/work "
+          ls -R /home/runner/work
+
           echo "***************"
           ls /home/runner/work/_PipelineMapping
-          pwd
+
           echo "***************"
           ls /home/runner/work/_actions
-          pwd
+
           echo "***************"
           ls /home/runner/work/_temp
-          pwd
