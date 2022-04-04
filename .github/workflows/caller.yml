@@ -22,6 +22,7 @@ jobs:
           ls /home/runner
           pwd
           echo "***************ls -R /home/runner/work "
+          cd ../../../../
           ls -R
 
           echo "***************"
