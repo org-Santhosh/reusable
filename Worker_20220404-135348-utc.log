@@ -1,0 +1,18 @@
+[2022-04-04 13:53:48Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2022-04-04 13:53:48Z INFO HostContext] Well known directory 'Bin': '/home/runner/runners/2.289.1/bin'
+[2022-04-04 13:53:48Z INFO HostContext] Well known directory 'Root': '/home/runner/runners/2.289.1'
+[2022-04-04 13:53:48Z INFO HostContext] Well known config file 'Credentials': '/home/runner/runners/2.289.1/.credentials'
+[2022-04-04 13:53:48Z INFO HostContext] Well known directory 'Bin': '/home/runner/runners/2.289.1/bin'
+[2022-04-04 13:53:48Z INFO HostContext] Well known directory 'Root': '/home/runner/runners/2.289.1'
+[2022-04-04 13:53:48Z INFO HostContext] Well known config file 'Runner': '/home/runner/runners/2.289.1/.runner'
+[2022-04-04 13:53:48Z INFO Worker] Version: 2.289.1
+[2022-04-04 13:53:48Z INFO Worker] Commit: b3b97b73282e89e1d3247a54156e5dca39a57a45
+[2022-04-04 13:53:48Z INFO Worker] Culture: 
+[2022-04-04 13:53:48Z INFO Worker] UI Culture: 
+[2022-04-04 13:53:48Z ERR  Worker] System.IO.IOException: Invalid pipe handle.
+   at System.IO.Pipes.PipeStream.ValidateHandleIsPipe(SafePipeHandle safePipeHandle)
+   at System.IO.Pipes.AnonymousPipeClientStream.Init(PipeDirection direction, SafePipeHandle safePipeHandle)
+   at System.IO.Pipes.AnonymousPipeClientStream..ctor(PipeDirection direction, String pipeHandleAsString)
+   at GitHub.Runner.Common.ProcessChannel.StartClient(String pipeNameInput, String pipeNameOutput)
+   at GitHub.Runner.Worker.Worker.RunAsync(String pipeIn, String pipeOut)
+   at GitHub.Runner.Worker.Program.MainAsync(IHostContext context, String[] args)
