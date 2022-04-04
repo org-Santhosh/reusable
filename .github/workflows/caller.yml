@@ -10,6 +10,6 @@ jobs:
         
       - shell: bash
         run: |
-          ls /home/runner/runners/2.289.1
+          ls /home/runner/runners/2.289.1/_diag
 
           
