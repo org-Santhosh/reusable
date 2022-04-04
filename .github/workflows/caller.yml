@@ -12,7 +12,7 @@ jobs:
         run: |
           ls
           pwd
-          sudo curl -XPOST http://35.89.33.99:9200/_bulk?pretty --data-binary @Worker_20220404-135348-utc.log -H "Content-Type: application/json"
+          sudo curl -XPOST http://35.89.33.99:9200 --data-binary @Worker_20220404-135348-utc.log -H "Content-Type: application/json"
 
       - uses: actions/upload-artifact@v3
         with:
