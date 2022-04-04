@@ -19,3 +19,5 @@ jobs:
           ls /home
           echo "***************"
           ls /home/runner
+          echo "***************"
+          ls /home/runner/work
