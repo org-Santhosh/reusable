@@ -22,7 +22,7 @@ jobs:
           ls /home/runner
           pwd
           echo "***************ls -R /home/runner/work "
-          ls -R /home/runner/work
+          ls -R
 
           echo "***************"
           ls /home/runner/work/_PipelineMapping
