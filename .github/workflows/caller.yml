@@ -3,10 +3,8 @@ name: samosa_workflow
 on: push
 jobs:
   upload1:
-    name: uploading office files to server
     runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
-          repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
-          echo $repo_name
+          ls /
