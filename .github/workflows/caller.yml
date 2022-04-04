@@ -10,26 +10,10 @@ jobs:
         
       - shell: bash
         run: |
-          ls
-          echo "***************"
-          pwd
-          echo "***************"
-          pwd
-          echo "***************"
-          ls /home
-          pwd
-          echo "***************"
-          ls /home/runner
-          pwd
           echo "***************ls -R /home/runner/work "
           cd ../../../../
+          pwd
           ls -R
+          pwd
 
-          echo "***************"
-          ls /home/runner/work/_PipelineMapping
-
-          echo "***************"
-          ls /home/runner/work/_actions
-
-          echo "***************"
-          ls /home/runner/work/_temp
+          
