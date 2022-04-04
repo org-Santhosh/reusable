@@ -11,4 +11,9 @@ jobs:
       - shell: bash
         run: |
           ls
+          echo "***************"
+          pwd
+          echo "***************"
+          pwd
+          echo "***************"
           ls /
