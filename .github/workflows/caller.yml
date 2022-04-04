@@ -16,4 +16,6 @@ jobs:
           echo "***************"
           pwd
           echo "***************"
-          ls /
+          ls /home
+          echo "***************"
+          ls /home/runner
