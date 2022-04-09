@@ -1,12 +1,39 @@
+name: CI_CD_WORKFLOW  
 
-name: samosa_workflow
-on: push
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - branch**
+      - develop
+
+  pull_request:
+    branches:
+     - develop
+     
 jobs:
-  upload1:
-    name: uploading office files to server
+  collecting-logs:
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
-        run: |
-          repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
-          echo $repo_name
+    - name: Checkout code
+      uses: actions/checkout@v2 
+      
+    #GET /repos/{owner}/{repo}/actions/jobs/{job_id}
+    # https://api.github.com/repos/octocat/hello-world/actions/jobs/42/logs
+
+    - name: downloading logs from github actions
+      run: | 
+        ls
+        echo ${{ github.run_id }} 
+        echo ${{ github.workflow }}
+        echo ${{ github.workflow_id }}
+        echo $GITHUB_JOB
+        echo $GITHUB_JOB_ID
+        echo $GITHUB_RUN_ID
+        echo $GITHUB_RUN_NUMBER	
+        echo "-------------------------------------"
+        curl -v  -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/org-Santhosh/reusable/actions/jobs/$GITHUB_RUN_NUMBER/logs
+        echo "--------------------------------------"
+        #curl -v -u username:${{ secrets.AM_ELK }} -H "Accept: application/vnd.github.v3+json" https://github.com/philips-internal/ampm-cicd-reference-application/actions/runs/5981141428/logs
+        #wget https://${{ secrets.AM_ELK }}@github.com/philips-internal/ampm-cicd-reference-application/actions/runs/5981141428/logs
+        ls
