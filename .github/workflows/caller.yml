@@ -32,7 +32,7 @@ jobs:
         echo $GITHUB_RUN_ID
         echo $GITHUB_RUN_NUMBER	
         echo "-------------------------------------"
-        curl -v  -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/org-Santhosh/reusable/actions/runs/$GITHUB_RUN_ID/jobs
+        curl  https://api.github.com/repos/org-Santhosh/reusable/actions/runs/$GITHUB_RUN_ID/jobs
         echo "--------------------------------------"
         #curl -v -u username:${{ secrets.AM_ELK }} -H "Accept: application/vnd.github.v3+json" https://github.com/philips-internal/ampm-cicd-reference-application/actions/runs/5981141428/logs
         #wget https://${{ secrets.AM_ELK }}@github.com/philips-internal/ampm-cicd-reference-application/actions/runs/5981141428/logs
