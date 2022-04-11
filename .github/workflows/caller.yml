@@ -42,7 +42,7 @@ jobs:
         gh --version
         sudo echo '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' > mytoken.txt
         ls
-        gh auth login
+        gh auth login --help
         gh auth login --with-token < mytoken.txt
         gh run view $GITHUB_RUN_ID --log
 
