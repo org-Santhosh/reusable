@@ -31,12 +31,13 @@ jobs:
         echo $GITHUB_JOB_ID
         echo $GITHUB_RUN_ID
         echo $GITHUB_RUN_NUMBER	
-        echo "-------------------------------------"
+        echo "------------------------------------- curling "
         GITHUB_CHECK_SUITE_ID=`curl -s https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | jq -r '.check_suite_id'`
         echo $GITHUB_CHECK_SUITE_ID
         #wget https://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@github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs
-        curl -v -u username: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  https://github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs
-
+        #curl -v -u username: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  https://github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs
+        curl -H 'Authorization: token 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' https://github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs
+        
         echo "--------------------------------------------"
         #curl  https://api.github.com/repos/org-Santhosh/reusable/actions/runs/$GITHUB_RUN_ID/jobs
         echo "----------------------"
