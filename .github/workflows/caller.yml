@@ -33,18 +33,23 @@ jobs:
         echo $GITHUB_RUN_NUMBER	
         echo "-------------------------------------"
         curl  https://api.github.com/repos/org-Santhosh/reusable/actions/runs/$GITHUB_RUN_ID/jobs
+        echo "----------------------"
+        curl -v -u username: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 -H "Accept: application/vnd.github.v3+json" https://github.com/philips-internal/ampm-cicd-reference-application/actions/runs/$GITHUB_RUN_ID/logs
+
         echo "--------------------------------------"
         #curl -v -u username:${{ secrets.AM_ELK }} -H "Accept: application/vnd.github.v3+json" https://github.com/philips-internal/ampm-cicd-reference-application/actions/runs/5981141428/logs
         #wget https://${{ secrets.AM_ELK }}@github.com/philips-internal/ampm-cicd-reference-application/actions/runs/5981141428/logs
         ls
-    - name: using github cli  
-      run: |
-        gh --version
-        sudo echo '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' > mytoken.txt
-        ls
-        gh auth login --help
-        sudo gh auth login --with-token < mytoken.txt
-        sudo gh run view $GITHUB_RUN_ID --log
+        
+        
+    #- name: using github cli  
+    #  run: |
+    #    gh --version
+    #    sudo echo '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' > mytoken.txt
+    #    ls
+    #    gh auth login --help
+    #    sudo gh auth login --with-token < mytoken.txt
+    #    sudo gh run view $GITHUB_RUN_ID --log
 
         
         
