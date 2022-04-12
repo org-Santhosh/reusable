@@ -52,8 +52,13 @@ jobs:
         #curl -v -u username:${{ secrets.AM_ELK }} -H "Accept: application/vnd.github.v3+json" https://github.com/philips-internal/ampm-cicd-reference-application/actions/runs/5981141428/logs
         #wget https://${{ secrets.AM_ELK }}@github.com/philips-internal/ampm-cicd-reference-application/actions/runs/5981141428/logs
         ls
-        cd logs
-        
+        #cd logs
+        pwd
+     
+    - uses: actions/upload-artifact@v3
+      with:
+        name: logs
+        path: logs
         
     #- name: using github cli  
     #  run: |
