@@ -33,8 +33,10 @@ jobs:
         echo $GITHUB_RUN_NUMBER	
         echo "------------------------------------- curling "
         GITHUB_CHECK_SUITE_ID=`curl -s https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID} | jq -r '.check_suite_id'`
-        curl -sSf -H "authToken: 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" -O 'https://github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs'
-
+        #curl -sSf -H "authToken: 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" -O 'https://github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs'
+        #curl -H "Accept: application/vnd.github.v3.diff" https://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:x-oauth-basic@api.github.com/repos/<org>/<repo>/pulls/<pull request>
+        curl -u san39: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 -H 'Accept: application/vnd.github.v3.raw' -O -L  "https://github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs"
+        
         echo $GITHUB_CHECK_SUITE_ID
         #wget https://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@github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs
         #curl -v -u username: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  https://github.com/org-Santhosh/reusable/suites/$GITHUB_CHECK_SUITE_ID/logs
