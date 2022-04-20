@@ -6,8 +6,7 @@ jobs:
     name: uploading office files to server
     runs-on: [self-hosted ]
     steps:
-      - shell: bash
-        run: |
+      - run: |
           #repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
           echo $repo_name
           echo "latest version of github runner is ${GITHUB_RUNNER_VERSION}"
