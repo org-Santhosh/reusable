@@ -10,5 +10,5 @@ jobs:
           #repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
           #echo $repo_name
           GITHUB_RUNNER_VERSION=$(curl --silent https://api.github.com/repos/actions/runner/releases/latest | grep '"tag_name":' | cut -d'"' -f4|sed 's/^.//')
-          echo "latest version of github runner is ${GITHUB_RUNNER_VERSION}"
+          echo "latest version of github runner is ${GITHUB_RUNNER_VERSION}" 
  
