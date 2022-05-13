@@ -10,4 +10,7 @@ jobs:
         run: |
           #repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
           print ("santhosh")
+          
+      - run: |
+          echo "santhosh"
  
