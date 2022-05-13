@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: date
-        run: echo "::set-output name=date::$(date +'%d-%m-%Y %H:%M:%S')"
+        run: echo "::set-output name=date::failure"
           
           
       - name: test
