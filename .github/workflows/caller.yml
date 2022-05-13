@@ -9,5 +9,5 @@ jobs:
       - shell: python
         run: |
           repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
-          print "santhosh"
+          print ("santhosh")
  
