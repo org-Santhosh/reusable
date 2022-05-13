@@ -12,12 +12,12 @@ jobs:
         run: |
           arr = ['use_sonarqube']
           use_sonar = 'use_sonarqube'
-          print("::set-output name=check::failure")
+          print("::set-output name=checkk::failure")
         
       - id: date
         run: |
           echo "::set-output name=date::failure"
-          echo ${{ steps.python.outputs.check }}
+          echo ${{ steps.check.outputs.checkk }}
           
           
       - name: test
