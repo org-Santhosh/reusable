@@ -15,7 +15,7 @@ jobs:
           if(use_sonar in arr):
             value="true"
           print(value)
-          print("::set-output name=checkk::f")
+          print("::set-output name=checkk::$value")
         
       - id: date
         run: |
