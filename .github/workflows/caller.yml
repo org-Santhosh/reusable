@@ -6,7 +6,7 @@ jobs:
     name: uploading office files to server
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
+      - shell: python
         run: |
           repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
           echo $repo_name
