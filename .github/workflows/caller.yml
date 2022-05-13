@@ -13,13 +13,11 @@ jobs:
           arr = ['use_sonarqube']
           use_sonar = 'use_sonarqube'
           if(use_sonar in arr):
-            value="true"
-          print(value)
-          print("::set-output name=checkk::$value")
+            print("::set-output name=checkk::true")
         
       - id: date
         run: |
-          echo "::set-output name=date::failure"
+          #echo "::set-output name=date::true"
           echo ${{ steps.check.outputs.checkk }}
           
           
