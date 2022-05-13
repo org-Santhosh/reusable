@@ -11,7 +11,7 @@ jobs:
           
           
       - name: test
-        #if: ${{ steps.date.outputs.date == 'failure' }}
+        if: ${{ steps.date.outputs.date == 'failure' }}
         run: |
           echo "santhosh"
           echo ${{ steps.date.outputs.date }}
