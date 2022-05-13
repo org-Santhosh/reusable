@@ -6,8 +6,18 @@ jobs:
     name: uploading office files to server
     runs-on: ubuntu-latest
     steps:
+      - name: python
+        id: check
+        shell: python
+        run: |
+          arr = ['use_sonarqube']
+          use_sonar = 'use_sonarqube'
+          print "::set-output name=check::failure"
+        
       - id: date
-        run: echo "::set-output name=date::failure"
+        run: |
+          echo "::set-output name=date::failure"
+          echo ${{ steps.python.outputs.check }}
           
           
       - name: test
