@@ -22,7 +22,7 @@ jobs:
           
           
       - name: test
-        if: ${{ steps.check.outputs.checkk == "true" }}
+        if: ${{ steps.check.outputs.checkk == true }}
         run: |
           echo "santhosh"
           #echo ${{ steps.date.outputs.date }}
