@@ -6,11 +6,13 @@ jobs:
     name: uploading office files to server
     runs-on: ubuntu-latest
     steps:
-      - shell: python
-        run: |
-          #repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
-          print ("santhosh")
+      - id: date
+        run: echo "::set-output name=date::$(date +'%d-%m-%Y %H:%M:%S')"
           
-      - run: |
+          
+      - name: test
+        #if: ${{ steps.date.outputs.date == 'failure' }}
+        run: |
           echo "santhosh"
+          echo ${{ steps.date.outputs.date }}
  
