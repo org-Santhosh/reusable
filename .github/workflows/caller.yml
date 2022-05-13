@@ -13,7 +13,7 @@ jobs:
           arr = ['use_sonarqube']
           use_sonar = 'use_sonarqube'
           if(use_sonar in arr):
-            value=true
+            value="true"
           print(value)
           print("::set-output name=checkk::f")
         
