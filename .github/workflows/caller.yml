@@ -12,7 +12,7 @@ jobs:
         run: |
           arr = ['use_sonarqube']
           use_sonar = 'use_sonarqube'
-          print "::set-output name=check::failure"
+          print("::set-output name=check::failure")
         
       - id: date
         run: |
