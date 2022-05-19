@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
-        if: ${{ $GITHUB_REF == 'refs/heads/branch_test2_prauto' }}
+        if: github.event.ref == 'refs/heads/branch_test2_prauto'
         run: |
           echo $GITHUB_REF
