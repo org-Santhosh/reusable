@@ -8,5 +8,4 @@ jobs:
     steps:
       - shell: bash
         run: |
-          echo done
- 
+          echo ${GITHUB_REF##*/}
