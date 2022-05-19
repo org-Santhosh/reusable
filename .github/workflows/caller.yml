@@ -7,5 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - shell: bash
+        if: ${{ ${GITHUB_REF##*/} == branch_test2_prauto}}
         run: |
           echo ${GITHUB_REF##*/}
