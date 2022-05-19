@@ -8,5 +8,5 @@ jobs:
     steps:
       - shell: bash
         run: |
-          ech done
+          echo done
  
