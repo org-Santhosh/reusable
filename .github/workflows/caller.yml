@@ -10,6 +10,8 @@ jobs:
         if: github.event.ref == 'refs/heads/branch_test2_prauto'
         run: |
           echo $GITHUB_REF
+          cd san/thosh
+          ls
           
       - name: upload- 
         uses: actions/upload-artifact@v3
