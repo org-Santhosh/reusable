@@ -1,5 +1,5 @@
 
-name: samosa_workflow
+name: new
 on: push
 jobs:
   upload1:
@@ -10,3 +10,9 @@ jobs:
         if: github.event.ref == 'refs/heads/branch_test2_prauto'
         run: |
           echo $GITHUB_REF
+          
+      - name: upload- 
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: san/thosh/
