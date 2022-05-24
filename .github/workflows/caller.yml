@@ -21,7 +21,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: san
+          path: |
+            santhosh/build/libs/deploy.txt
+            santhosh/manifest.yml
           
       - name: test
         run: ls
