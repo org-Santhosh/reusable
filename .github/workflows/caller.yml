@@ -6,6 +6,10 @@ jobs:
     name: uploading office files to server
     runs-on: ubuntu-latest
     steps:
+    
+      - name:  Checkout Repository from GitHub      
+        uses: actions/checkout@v2
+        
       - shell: bash
         if: github.event.ref == 'refs/heads/branch_test2_prauto'
         run: |
