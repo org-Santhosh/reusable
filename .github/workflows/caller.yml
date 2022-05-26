@@ -14,4 +14,4 @@ jobs:
       - name: test
         #if : {{ $environment == test1 }}
         run: |
-          echo {{$environment == 'QA Space'}}
+          echo ${{$environment == 'QA Space'}}
