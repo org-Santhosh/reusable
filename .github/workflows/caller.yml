@@ -12,6 +12,6 @@ jobs:
         uses: actions/checkout@v2
         
       - name: test
-        #if : {{ $environment == test1 }}
+        #if : {{ jobs.upload1.environment == test1 }}
         run: |
-          echo jobs.upload1.environment
+          echo ${{ jobs.upload1.environment }}
