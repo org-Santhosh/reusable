@@ -5,25 +5,13 @@ jobs:
   upload1:
     name: uploading office files to server
     runs-on: ubuntu-latest
+    environment: test
     steps:
     
       - name:  Checkout Repository from GitHub      
         uses: actions/checkout@v2
         
-      - shell: bash
-        if: github.event.ref == 'refs/heads/branch_test2_prauto'
-        run: |
-          echo $GITHUB_REF
-          cd san/thosh
-          ls
-          
-      - name: upload- 
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: |
-            santhosh/build/libs/deploy.txt
-            santhosh/manifest.yml
-          
       - name: test
-        run: ls
+        if : ${{ $environment == test1 }}
+        run: |
+          echo "san"
