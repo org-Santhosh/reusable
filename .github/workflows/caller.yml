@@ -8,6 +8,6 @@ jobs:
     steps:
       - name: test
         run: |
-          echo ${ GITHUB_WORKSPACE }
+          #echo ${ GITHUB_WORKSPACE }
           echo ${{ github.workspace }}
  
