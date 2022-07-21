@@ -8,6 +8,14 @@ jobs:
     steps:
       - shell: bash
         run: |
-          repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
-          echo $repo_name
- 
+          echo "job1"
+          #repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
+          #echo $repo_name
+          
+  job2:
+    name: job2
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo "job2"
