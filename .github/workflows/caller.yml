@@ -19,3 +19,19 @@ jobs:
       - shell: bash
         run: |
           echo "job2"
+
+  job3:
+    name: job3
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo "job3"
+
+  job4:
+    name: job4
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo "job4"
