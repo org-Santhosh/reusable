@@ -1,5 +1,5 @@
 
-name: samosa_workflow
+name: workflow_caller
 
 on:
   push:
@@ -13,8 +13,8 @@ on:
     types: [closed] 
 
 jobs:
-  upload1:
-    name: uploading office files to server
+  job1:
+    name: job1
     runs-on: ubuntu-latest
     steps:
       - shell: bash
@@ -25,6 +25,7 @@ jobs:
           
   job2:
     name: job2
+    needs: [job1]
     runs-on: ubuntu-latest
     steps:
       - shell: bash
@@ -33,6 +34,7 @@ jobs:
 
   job3:
     name: job3
+    needs: [job2]
     runs-on: ubuntu-latest
     steps:
       - shell: bash
@@ -41,6 +43,7 @@ jobs:
 
   job4:
     name: job4
+    needs: [job3]
     runs-on: ubuntu-latest
     steps:
       - shell: bash
