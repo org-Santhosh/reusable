@@ -36,6 +36,7 @@ jobs:
   job3:
     name: job3
     needs: [job2]
+    if: github.event_name == 'pull_request' && ( contains(github.base_ref, 'branch_conditiontest1') || contains(github.base_ref, 'main') )
     runs-on: ubuntu-latest
     steps:
       - shell: bash
