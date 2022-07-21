@@ -9,7 +9,7 @@ on:
   pull_request:
     branches:
      - main
-     - develop
+     - branch_conditiontest1
     types: [closed] 
 
 jobs:
