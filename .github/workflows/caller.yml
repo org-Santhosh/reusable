@@ -1,13 +1,54 @@
 
-name: samosa_workflow
-on: push
+name: workflow_caller
+
+on:
+  push:
+    branches: 
+      - branch**
+      - main
+  pull_request:
+    branches:
+     - main
+     - branch_conditiontest1
+    types: [closed] 
+
 jobs:
-  upload1:
-    name: uploading office files to server
+  job1:
+    if:  github.event_name == 'push' && ( github.event.ref != 'refs/heads/branch_conditiontest1' && github.event.ref != 'refs/heads/main')
+    name: job1
     runs-on: ubuntu-latest
     steps:
       - shell: bash
         run: |
-          repo_name = "${{ github.repository }} " - "${{ github.repository.owner }}"
-          echo $repo_name
- 
+          echo "job1"
+
+          
+  job2:
+    name: job2
+    if: github.event_name == 'pull_request' && contains(github.base_ref, 'branch_conditiontest1') || contains(github.base_ref, 'main')
+    #needs: [job1]
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo "job2"
+
+  job3:
+    name: job3
+    needs: [job2]
+    if: github.event.pull_request.merged == true
+    #if:  github.event_name == 'push' && ( github.event.ref != 'refs/heads/branch_conditiontest1' && github.event.ref != 'refs/heads/main')
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo "job3"
+
+  job4:
+    name: job4
+    needs: [job3]
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo "job4"
